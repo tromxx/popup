@@ -13,23 +13,25 @@
 
 <body>
   <script>
-    window.onload = function() {
-      let popupWidth = 700;
-      let popupHeight = 600;
+  window.onload = function() {
+    let popupWidth = 700;
+    let popupHeight = 600;
 
-      let left = (window.screen.width - (popupWidth*2))/2 + 100;
-      let top = (window.screen.height / 2) - (popupHeight / 2);
-      
-      const currentDate = new Date();
-      console.log("Current date:", currentDate.toDateString());
-      
-      window.open("popup01.html", "_blank",
-        "width=" + popupWidth + ",height=" + popupHeight +
-        ",left=" + left + ",top=" + top);
-      window.open("popup02.html", "_blank",
-              "width=" + popupWidth + ",height=" + popupHeight +
-              ",left=" + (left+popupWidth) + ",top=" + top);
-    };
+    let left = (window.screen.width - popupWidth) / 2;
+    let top = (window.screen.height - popupHeight) / 2;
+  
+    const currentDate = new Date();
+    const cutoffDate = new Date(2024, 10, 15); 
+
+    if (currentDate <= cutoffDate) {
+    window.open("popup01.html", "_blank",
+      "width=" + popupWidth + ",height=" + popupHeight +
+      ",left=" + left + ",top=" + top);
+    } else {
+    window.open("popup02.html", "_blank",
+      "width=" + popupWidth + ",height=" + popupHeight +
+      ",left=" + left + ",top=" + top);
+    }};
   </script>
 </body>
 
