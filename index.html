@@ -19,7 +19,10 @@
 
       let left = (window.screen.width - (popupWidth*2))/2 + 100;
       let top = (window.screen.height / 2) - (popupHeight / 2);
-
+      
+      const currentDate = new Date();
+      console.log("Current date:", currentDate.toDateString());
+      
       window.open("popup01.html", "_blank",
         "width=" + popupWidth + ",height=" + popupHeight +
         ",left=" + left + ",top=" + top);
